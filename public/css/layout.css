@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Diplomata+SC');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Bangers|Metal+Mania');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
+
+
+body{
+    background-color: black;
+    font-family: sans-serif;    
+}
+
+#mainForm{
+    background-color: white;
+    width: 370px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#setvenues{
+    width: 100%;
+}
+
+#cars{
+    width: 100%;
+}
+
+#mainRes{
+    width: 570px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Outrun future;
+    color: white;
+}
+
+#openingform {
+    background-color: white;
+    width: 570px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Josefin Slab', serif;
+    font-size: 40px;
+    color: white;
+}
+
+#countryRes{ 
+    width: 570px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Diplomata SC', cursive;
+    font-size: 40px;
+    color: white;
+    background-image: url(../images/countrybackground.jpg);
+    background-size: cover;
+}
+
+
+#metalRes{
+    width: 570px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Metal Mania', cursive;
+    font-size: 40px;
+    color: white;
+    background-image: url(../images/metalbackground.jpg);
+    background-size: cover;
+}
+
+
+#popRes{
+    width: 570px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: white;
+    background-image: url(../images/popbackground1.jpg);
+    background-size: cover;
+}
+
+
+#rockRes{
+    width: 570px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    font-size: 40px;
+    color: white;
+    background-image: url(../images/rockbackground.jpg);
+    background-size: cover;
+}
+
+
+.biggertext  {
+    font-size: 80px;
+}
+
+.locationtext {
+    font-size: 60px;
+}
+
+
+a:hover {
+    color: palegreen;
+}
+
+
+
+
