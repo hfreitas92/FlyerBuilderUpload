@@ -6,7 +6,6 @@ const Vision = require('vision');
 const Inert = require('inert');
 const Path = require('path');
 const Handlebars = require('handlebars');
-const Express = require('express');
 const pg = require('pg');
 
 const fs = require("fs");
@@ -24,6 +23,9 @@ const server = new Hapi.Server({
         }
     }
 });
+
+var sequelize;
+
 
 server.connection({
     port: (process.env.PORT || 3000)
