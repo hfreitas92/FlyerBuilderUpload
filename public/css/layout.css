@@ -96,18 +96,18 @@ body{
     text-align: center;
     font-family: 'Bangers', cursive;
     font-size: 40px;
-    color: white;
+    color: black;
     background-image: url(../images/rockbackground.jpg);
     background-size: cover;
 }
 
 
 .biggertext  {
-    font-size: 80px;
+    font-size: 60px;
 }
 
 .locationtext {
-    font-size: 60px;
+    font-size: 40px;
 }
 
 
@@ -117,4 +117,158 @@ a:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* Search results area */
+ .vertical-image {
+    min-height: 170px;
+}
+.horizontal-image {
+    min-height: 160px;
+}
+div.image-float-wrapper {
+    padding-bottom: 10px;
+    padding-right: 10px;
+    text-align: center;
+    width: 100%;
+    position: static;
+    margin-bottom: -10px;
+}
+
+.shutterstock-logo {
+    width: 50%;
+}
+/* Crop image ID */
+ div.thumbnail-crop {
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+
+.img1 {
+   position: absolute; 
+   top: 80px; 
+   left: 2px; 
+   width: 100%;
+   font-family: 'Bangers', cursive;
+   font-size: 30px;
+   text-align: center;
+   color: black;
+}
+
+
+.img2 {
+   position: absolute; 
+   top: 530px; 
+   left: 2px; 
+   width: 100%;
+   font-family: 'Bangers', cursive;
+   font-size: 30px;
+   text-align: center;
+   color: black;
+}
+
+
+
+.img3 {
+   position: absolute; 
+   top: 970px; 
+   left: 2px; 
+   width: 100%;
+   font-family: 'Bangers', cursive;
+   font-size: 30px;
+   text-align: center;
+   color: black;
+}
+
+
+
+
+
+
+
+
+
+.metalimg1 {
+   position: absolute; 
+   top: 80px; 
+   left: 2px; 
+   width: 100%;
+   font-family: 'Metal Mania', cursive;
+   font-size: 30px;
+   text-align: center;
+   color: black;
+}
+
+.metalimg2 {
+   position: absolute; 
+   top: 530px; 
+   left: 2px; 
+   width: 100%;
+   font-family: 'Metal Mania', cursive;
+   font-size: 30px;
+   text-align: center;
+   color: black;
+   
+}
+
+
+.metalimg3 {
+   position: absolute; 
+   top: 970px; 
+   left: 2px; 
+   width: 100%;
+   font-family: 'Metal Mania', cursive;
+   font-size: 30px;
+   text-align: center;
+   color: black;
+}
+
+
+
+
+
+.popimg1 {
+   position: absolute; 
+   top: 80px; 
+   left: 2px; 
+   width: 100%;
+   font-family: 'Pacifico', cursive;
+   font-size: 10px;
+   text-align: center;
+   color: white;
+}
+
+
+.popimg2 {
+   position: absolute; 
+   top: 530px; 
+   left: 2px; 
+   width: 100%;
+   font-family: 'Pacifico', cursive;
+   font-size: 10px;
+   text-align: center;
+   color: white;  
+}
+
+
+.popimg3 {
+   position: absolute; 
+   top: 970px; 
+   left: 2px; 
+   width: 100%;
+   font-family: 'Pacifico', cursive;
+   font-size: 10px;
+   text-align: center;
+   color: white;
+}
 

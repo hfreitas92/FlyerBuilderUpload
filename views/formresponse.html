@@ -1,7 +1,146 @@
 {{#if formresponse.rockchoice}}
 
 
-<div id="rockRes">
+      
+
+  
+  <br>
+  <!-- ROCK Shutterstock API -->
+  
+  
+   <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="well col-xs-12 col-sm-4 col-md-4 col-lg-3">
+        
+
+        <form id="search-form">
+            <fieldset>
+                <div class="form-group form-group-sm row">
+                    <label class="col-xs-12 col-sm-6 col-md-6 col-lg-6 control-label" for="query">Search:</label>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <input id="query" name="query" value="rock show" placeholder="music" list="query-suggestions" class="form-control" />
+                        
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOptions">
+                             <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOptions" aria-expanded="true" aria-controls="collapseOptions">
+                     More Search Parameters <i class="fa fa-gears"></i>
+                    </a>
+                  </h4>
+
+                        </div>
+                        <div id="collapseOptions" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOptions">
+                            <div class="panel-body">
+                                <div class="form-horizontal form-group-sm">
+                                    <div class="form-group hide" hidden>
+                                        <label for="safe" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Safe Search:</label>
+                                        <select id="safe" name="safe" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="true" selected>On</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="image_type" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Image Type:</label>
+                                        <select id="image_type" name="image_type" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="">Any</option>
+                                            <option value="photo" selected>Photo</option>
+                                            <option value="illustration">Illustration</option>
+                                            <option value="vector">Vector</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="orientation" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Orientation:</label>
+                                        <select id="orientation" name="orientation" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="">Any</option>
+                                            <option value="vertical" selected>Vertical</option>
+                                            <option value="horizontal">Horizontal</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="category" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Category:</label>
+                                        <select id="category" name="category" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="" selected>Any</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="people_number" class="col-xs-6 col-sm-6 col-md-6 col-lg-6"># People:</label>
+                                        <select id="people_number" name="people_number" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="" selected>Any</option>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4+</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="color" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Color Search:</label>
+                                        <input id="color" name="color" type="color" value="#999999" class="hide" hidden/>
+                                        <input type="color" value="#2d978c" onclick="setColor(this)" />
+                                        <input type="color" value="#d97291" onclick="setColor(this)" />
+                                        <br/>
+                                        <input type="color" value="#259503" onclick="setColor(this)" />
+                                        <input type="color" value="#d7d11c" onclick="setColor(this)" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="page" class="col-xs-3 col-sm-3 col-md-3 col-lg-7">Page:</label>
+                                        <select id="page" name="page" class="btn col-xs-3 col-sm-3 col-md-3 col-lg-5">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                        <label for="per_page" class="col-xs-3 col-sm-3 col-md-3 col-lg-7">Per Page:</label>
+                                        <select id="per_page" name="per_page" class="btn col-xs-3 col-sm-3 col-md-3 col-lg-5">
+                                            <option value="3" selected>3</option>
+                                            <option value="9" >9</option>
+                                            <option value="12">12</option>
+                                            <option value="18">18</option>
+                                            <option value="24">24</option>
+                                            <option value="28">28</option>
+                                            <option value="48">48</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                       
+                        <div id="collapseAuthentication" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAuthentication">
+                            <div class="panel-body">
+                                <div class="form-group form-group-sm row">
+                                    <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6 control-label" for="client_id">Client ID:</label>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <input id="client_id" name="client_id" autocomplete="on" value="8fada2785dd72053023c" class="form-control" />
+                                    </div>
+                                    <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6 control-label" for="client_secret">Client Secret:</label>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <input id="client_secret" name="client_secret" autocomplete="on" value="a380c844d9bcce29478bd01ec3a50ca16e0ef3eb" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="submit" name="submit" type="submit" class="btn btn-primary pull-right">Search <i class="fa fa-search"></i>
+
+                </button>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-8 col-lg-9">
+        <div class="col-xs-6 col-md-6 col-lg-6 image-results">
+            
+
+     
+            <p class="lead">View Flyers:</p>
+            <hr />
+            
+            <div id="image-search-results"></div>
+            
+            
+<div class="img1">
 
 <p class="biggertext">
 {{formresponse.bandName}}
@@ -9,32 +148,230 @@
 
 <p>LIVE!</p>
 
-
 <p>at</p>
 
 <p class="locationtext">
-{{formresponse.setVenue}} 
-{{formresponse.customVenue}} 
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
 </p>
 
 <p class="biggertext">
 {{formresponse.gigdate}}
 </p>
 
+</div>  
+            
+            
+            
+<div class="img2">
+        
+<p class="biggertext">
+{{formresponse.bandName}}
+</p>
+
+<p>LIVE!</p>
+
+<p>at</p>
+
+<p class="locationtext">
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
+</p>
+
+<p class="biggertext">
+{{formresponse.gigdate}}
+</p>
+
+</div>  
+           
+             
+<div class="img3">
+        
+<p class="biggertext">
+{{formresponse.bandName}}
+</p>
+
+<p>LIVE!</p>
+
+<p>at</p>
+
+<p class="locationtext">
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
+</p>
+
+<p class="biggertext">
+{{formresponse.gigdate}}
+</p>
+
+</div>       
+            
+            
+            
+        
+            
+            
+        </div>
+       
+    </div>
 </div>
+
+
+   
+   <!-- end of ROCK Shutterstock API -->
+
 
 {{/if}}
 
 
 
-
+<!-- If Country is genre -->
 
 
 
 {{#if formresponse.countrychoice}}
 
 
-<div id="countryRes">
+
+
+
+  <br>
+  <!-- Country Shutterstock API -->
+  
+  
+   <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="well col-xs-12 col-sm-4 col-md-4 col-lg-3">
+        
+
+        <form id="search-form">
+            <fieldset>
+                <div class="form-group form-group-sm row">
+                    <label class="col-xs-12 col-sm-6 col-md-6 col-lg-6 control-label" for="query">Search:</label>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <input id="query" name="query" value="country music" placeholder="music" list="query-suggestions" class="form-control" />
+                        
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOptions">
+                             <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOptions" aria-expanded="true" aria-controls="collapseOptions">
+                     More Search Parameters <i class="fa fa-gears"></i>
+                    </a>
+                  </h4>
+
+                        </div>
+                        <div id="collapseOptions" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOptions">
+                            <div class="panel-body">
+                                <div class="form-horizontal form-group-sm">
+                                    <div class="form-group hide" hidden>
+                                        <label for="safe" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Safe Search:</label>
+                                        <select id="safe" name="safe" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="true" selected>On</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="image_type" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Image Type:</label>
+                                        <select id="image_type" name="image_type" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="">Any</option>
+                                            <option value="photo" selected>Photo</option>
+                                            <option value="illustration">Illustration</option>
+                                            <option value="vector">Vector</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="orientation" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Orientation:</label>
+                                        <select id="orientation" name="orientation" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="">Any</option>
+                                            <option value="vertical" selected>Vertical</option>
+                                            <option value="horizontal">Horizontal</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="category" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Category:</label>
+                                        <select id="category" name="category" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="" selected>Any</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="people_number" class="col-xs-6 col-sm-6 col-md-6 col-lg-6"># People:</label>
+                                        <select id="people_number" name="people_number" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="" selected>Any</option>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4+</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="color" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Color Search:</label>
+                                        <input id="color" name="color" type="color" value="#999999" class="hide" hidden/>
+                                        <input type="color" value="#2d978c" onclick="setColor(this)" />
+                                        <input type="color" value="#d97291" onclick="setColor(this)" />
+                                        <br/>
+                                        <input type="color" value="#259503" onclick="setColor(this)" />
+                                        <input type="color" value="#d7d11c" onclick="setColor(this)" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="page" class="col-xs-3 col-sm-3 col-md-3 col-lg-7">Page:</label>
+                                        <select id="page" name="page" class="btn col-xs-3 col-sm-3 col-md-3 col-lg-5">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                        <label for="per_page" class="col-xs-3 col-sm-3 col-md-3 col-lg-7">Per Page:</label>
+                                        <select id="per_page" name="per_page" class="btn col-xs-3 col-sm-3 col-md-3 col-lg-5">
+                                            <option value="3" selected>3</option>
+                                            <option value="9" >9</option>
+                                            <option value="12">12</option>
+                                            <option value="18">18</option>
+                                            <option value="24">24</option>
+                                            <option value="28">28</option>
+                                            <option value="48">48</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                       
+                        <div id="collapseAuthentication" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAuthentication">
+                            <div class="panel-body">
+                                <div class="form-group form-group-sm row">
+                                    <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6 control-label" for="client_id">Client ID:</label>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <input id="client_id" name="client_id" autocomplete="on" value="8fada2785dd72053023c" class="form-control" />
+                                    </div>
+                                    <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6 control-label" for="client_secret">Client Secret:</label>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <input id="client_secret" name="client_secret" autocomplete="on" value="a380c844d9bcce29478bd01ec3a50ca16e0ef3eb" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="submit" name="submit" type="submit" class="btn btn-primary pull-right">Search <i class="fa fa-search"></i>
+
+                </button>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-8 col-lg-9">
+        <div class="col-xs-6 col-md-6 col-lg-6 image-results">
+            
+
+     
+            <p class="lead">View Flyers:</p>
+            <hr />
+            
+            <div id="image-search-results"></div>
+            
+
+<div class="img1">
 
 <p class="biggertext">
 {{formresponse.bandName}}
@@ -44,78 +381,527 @@
 
 <p>at</p>
 
+<p class="locationtext">
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
+</p>
 
-{{formresponse.setVenue}} 
-{{formresponse.customVenue}}  
- 
-
+<p class="biggertext">
 {{formresponse.gigdate}}
+</p>
 
+</div>  
+            
+            
+            
+<div class="img2">
+        
+<p class="biggertext">
+{{formresponse.bandName}}
+</p>
+
+<p>LIVE!</p>
+
+<p>at</p>
+
+<p class="locationtext">
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
+</p>
+
+<p class="biggertext">
+{{formresponse.gigdate}}
+</p>
+
+</div>  
+           
+             
+<div class="img3">
+        
+<p class="biggertext">
+{{formresponse.bandName}}
+</p>
+
+<p>LIVE!</p>
+
+<p>at</p>
+
+<p class="locationtext">
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
+</p>
+
+<p class="biggertext">
+{{formresponse.gigdate}}
+</p>
+
+</div>       
+            
+            
+    
+        </div>
+       
+    </div>
 </div>
+
 
 {{/if}}
 
 
+
+
+
+<!-- If Pop is genre -->
 
 
 {{#if formresponse.popchoice}}
 
 
-<div id="popRes">
+
+
+
+
+
+  <br>
+  <!-- Pop music Shutterstock API -->
+  
+  
+   <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="well col-xs-12 col-sm-4 col-md-4 col-lg-3">
+        
+
+        <form id="search-form">
+            <fieldset>
+                <div class="form-group form-group-sm row">
+                    <label class="col-xs-12 col-sm-6 col-md-6 col-lg-6 control-label" for="query">Search:</label>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <input id="query" name="query" value="pop music" placeholder="music" list="query-suggestions" class="form-control" />
+                        
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOptions">
+                             <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOptions" aria-expanded="true" aria-controls="collapseOptions">
+                     More Search Parameters <i class="fa fa-gears"></i>
+                    </a>
+                  </h4>
+
+                        </div>
+                        <div id="collapseOptions" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOptions">
+                            <div class="panel-body">
+                                <div class="form-horizontal form-group-sm">
+                                    <div class="form-group hide" hidden>
+                                        <label for="safe" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Safe Search:</label>
+                                        <select id="safe" name="safe" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="true" selected>On</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="image_type" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Image Type:</label>
+                                        <select id="image_type" name="image_type" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="">Any</option>
+                                            <option value="photo" selected>Photo</option>
+                                            <option value="illustration">Illustration</option>
+                                            <option value="vector">Vector</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="orientation" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Orientation:</label>
+                                        <select id="orientation" name="orientation" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="">Any</option>
+                                            <option value="vertical" selected>Vertical</option>
+                                            <option value="horizontal">Horizontal</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="category" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Category:</label>
+                                        <select id="category" name="category" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="" selected>Any</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="people_number" class="col-xs-6 col-sm-6 col-md-6 col-lg-6"># People:</label>
+                                        <select id="people_number" name="people_number" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="" selected>Any</option>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4+</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="color" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Color Search:</label>
+                                        <input id="color" name="color" type="color" value="#999999" class="hide" hidden/>
+                                        <input type="color" value="#2d978c" onclick="setColor(this)" />
+                                        <input type="color" value="#d97291" onclick="setColor(this)" />
+                                        <br/>
+                                        <input type="color" value="#259503" onclick="setColor(this)" />
+                                        <input type="color" value="#d7d11c" onclick="setColor(this)" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="page" class="col-xs-3 col-sm-3 col-md-3 col-lg-7">Page:</label>
+                                        <select id="page" name="page" class="btn col-xs-3 col-sm-3 col-md-3 col-lg-5">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                        <label for="per_page" class="col-xs-3 col-sm-3 col-md-3 col-lg-7">Per Page:</label>
+                                        <select id="per_page" name="per_page" class="btn col-xs-3 col-sm-3 col-md-3 col-lg-5">
+                                            <option value="3" selected>3</option>
+                                            <option value="9" >9</option>
+                                            <option value="12">12</option>
+                                            <option value="18">18</option>
+                                            <option value="24">24</option>
+                                            <option value="28">28</option>
+                                            <option value="48">48</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                       
+                        <div id="collapseAuthentication" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAuthentication">
+                            <div class="panel-body">
+                                <div class="form-group form-group-sm row">
+                                    <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6 control-label" for="client_id">Client ID:</label>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <input id="client_id" name="client_id" autocomplete="on" value="8fada2785dd72053023c" class="form-control" />
+                                    </div>
+                                    <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6 control-label" for="client_secret">Client Secret:</label>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <input id="client_secret" name="client_secret" autocomplete="on" value="a380c844d9bcce29478bd01ec3a50ca16e0ef3eb" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="submit" name="submit" type="submit" class="btn btn-primary pull-right">Search <i class="fa fa-search"></i>
+
+                </button>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-8 col-lg-9">
+        <div class="col-xs-6 col-md-6 col-lg-6 image-results">
+            
+
+     
+            <p class="lead">View Flyers:</p>
+            <hr />
+            
+            <div id="image-search-results"></div>
+            
+
+<div class="popimg1">
 
 <p class="biggertext">
 {{formresponse.bandName}}
 </p>
 
-
 <p>LIVE!</p>
-   
+
 <p>at</p>
 
-<p class="biggertext">
-{{formresponse.setVenue}} 
-{{formresponse.customVenue}}  
+<p class="locationtext">
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
 </p>
 
 <p class="biggertext">
 {{formresponse.gigdate}}
 </p>
 
+</div>  
+            
+            
+            
+<div class="popimg2">
+        
+<p class="biggertext">
+{{formresponse.bandName}}
+</p>
+
+<p>LIVE!</p>
+
+<p>at</p>
+
+<p class="locationtext">
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
+</p>
+
+<p class="biggertext">
+{{formresponse.gigdate}}
+</p>
+
+</div>  
+           
+             
+<div class="popimg3">
+        
+<p class="biggertext">
+{{formresponse.bandName}}
+</p>
+
+<p>LIVE!</p>
+
+<p>at</p>
+
+<p class="locationtext">
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
+</p>
+
+<p class="biggertext">
+{{formresponse.gigdate}}
+</p>
+
+</div>       
+            
+            
+    
+        </div>
+       
+    </div>
 </div>
+
+
 
 {{/if}}
 
 
 
 
-
+<!-- If Metal is genre -->
 
 
 
 {{#if formresponse.metalchoice}}
 
 
-<div id="metalRes">
+
+
+
+
+
+
+  <br>
+  <!-- Metal Shutterstock API -->
+  
+  
+   <div class="container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="well col-xs-12 col-sm-4 col-md-4 col-lg-3">
+        
+
+        <form id="search-form">
+            <fieldset>
+                <div class="form-group form-group-sm row">
+                    <label class="col-xs-12 col-sm-6 col-md-6 col-lg-6 control-label" for="query">Search:</label>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <input id="query" name="query" value="heavy metal" placeholder="music" list="query-suggestions" class="form-control" />
+                        
+                    </div>
+                </div>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOptions">
+                             <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOptions" aria-expanded="true" aria-controls="collapseOptions">
+                     More Search Parameters <i class="fa fa-gears"></i>
+                    </a>
+                  </h4>
+
+                        </div>
+                        <div id="collapseOptions" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOptions">
+                            <div class="panel-body">
+                                <div class="form-horizontal form-group-sm">
+                                    <div class="form-group hide" hidden>
+                                        <label for="safe" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Safe Search:</label>
+                                        <select id="safe" name="safe" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="true" selected>On</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="image_type" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Image Type:</label>
+                                        <select id="image_type" name="image_type" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="">Any</option>
+                                            <option value="photo" selected>Photo</option>
+                                            <option value="illustration">Illustration</option>
+                                            <option value="vector">Vector</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="orientation" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Orientation:</label>
+                                        <select id="orientation" name="orientation" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="">Any</option>
+                                            <option value="vertical" selected>Vertical</option>
+                                            <option value="horizontal">Horizontal</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="category" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Category:</label>
+                                        <select id="category" name="category" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="" selected>Any</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="people_number" class="col-xs-6 col-sm-6 col-md-6 col-lg-6"># People:</label>
+                                        <select id="people_number" name="people_number" class="btn col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <option value="" selected>Any</option>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4+</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="color" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Color Search:</label>
+                                        <input id="color" name="color" type="color" value="#999999" class="hide" hidden/>
+                                        <input type="color" value="#2d978c" onclick="setColor(this)" />
+                                        <input type="color" value="#d97291" onclick="setColor(this)" />
+                                        <br/>
+                                        <input type="color" value="#259503" onclick="setColor(this)" />
+                                        <input type="color" value="#d7d11c" onclick="setColor(this)" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="page" class="col-xs-3 col-sm-3 col-md-3 col-lg-7">Page:</label>
+                                        <select id="page" name="page" class="btn col-xs-3 col-sm-3 col-md-3 col-lg-5">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                        <label for="per_page" class="col-xs-3 col-sm-3 col-md-3 col-lg-7">Per Page:</label>
+                                        <select id="per_page" name="per_page" class="btn col-xs-3 col-sm-3 col-md-3 col-lg-5">
+                                            <option value="3" selected>3</option>
+                                            <option value="9" >9</option>
+                                            <option value="12">12</option>
+                                            <option value="18">18</option>
+                                            <option value="24">24</option>
+                                            <option value="28">28</option>
+                                            <option value="48">48</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                       
+                        <div id="collapseAuthentication" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAuthentication">
+                            <div class="panel-body">
+                                <div class="form-group form-group-sm row">
+                                    <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6 control-label" for="client_id">Client ID:</label>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <input id="client_id" name="client_id" autocomplete="on" value="8fada2785dd72053023c" class="form-control" />
+                                    </div>
+                                    <label class="col-xs-6 col-sm-6 col-md-6 col-lg-6 control-label" for="client_secret">Client Secret:</label>
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <input id="client_secret" name="client_secret" autocomplete="on" value="a380c844d9bcce29478bd01ec3a50ca16e0ef3eb" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="submit" name="submit" type="submit" class="btn btn-primary pull-right">Search <i class="fa fa-search"></i>
+
+                </button>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-xs-12 col-md-8 col-md-8 col-lg-9">
+        <div class="col-xs-6 col-md-6 col-lg-6 image-results">
+            
+
+     
+            <p class="lead">View Flyers:</p>
+            <hr />
+            
+            <div id="image-search-results"></div>
+            
+
+<div class="metalimg1">
 
 <p class="biggertext">
 {{formresponse.bandName}}
 </p>
 
 <p>LIVE!</p>
-   
 
 <p>at</p>
 
-<p class="biggertext">
-{{formresponse.setVenue}} 
-{{formresponse.customVenue}} 
+<p class="locationtext">
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
 </p>
 
 <p class="biggertext">
 {{formresponse.gigdate}}
 </p>
 
+</div>  
+            
+            
+            
+<div class="metalimg2">
+        
+<p class="biggertext">
+{{formresponse.bandName}}
+</p>
+
+<p>LIVE!</p>
+
+<p>at</p>
+
+<p class="locationtext">
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
+</p>
+
+<p class="biggertext">
+{{formresponse.gigdate}}
+</p>
+
+</div>  
+           
+             
+<div class="metalimg3">
+        
+<p class="biggertext">
+{{formresponse.bandName}}
+</p>
+
+<p>LIVE!</p>
+
+<p>at</p>
+
+<p class="locationtext">
+{{formresponse.setVenue}}
+{{formresponse.customVenue}}
+</p>
+
+<p class="biggertext">
+{{formresponse.gigdate}}
+</p>
+
+</div>       
+            
+            
+    
+        </div>
+       
+    </div>
 </div>
+
+
+
 
 {{/if}}
 

@@ -6,7 +6,7 @@ const Vision = require('vision');
 const Inert = require('inert');
 const Path = require('path');
 const Handlebars = require('handlebars');
-const pg = require('pg');
+const Express = require('express');
 
 const fs = require("fs");
 
@@ -24,36 +24,24 @@ const server = new Hapi.Server({
     }
 });
 
-var sequelize;
-
-
 server.connection({
-    port: (process.env.PORT || 3000)
+    port: 3000
 });
 
 
-if (process.env.DATABASE_URL) {
-    // the application is executed on Heroku ... use the postgres database
-    sequelize = new Sequelize(process.env.DATABASE_URL, {
-        dialect: 'postgres',
-        protocol: 'postgres',
-        logging: true //false
-    })
-} else {
-    sequelize = new Sequelize('db', 'username', 'password', {
-        host: 'localhost',
-        dialect: 'sqlite',
+var sequelize = new Sequelize('db', 'username', 'password', {
+    host: 'localhost',
+    dialect: 'sqlite',
 
-        pool: {
-            max: 5,
-            min: 0,
-            idle: 10000
-        },
+    pool: {
+        max: 5,
+        min: 0,
+        idle: 10000
+    },
 
-        // SQLite only
-        storage: 'db.sqlite'
-    });
-}
+    // SQLite only
+    storage: 'db.sqlite'
+});
 
 
 var bandinfo = sequelize.define('bandinfo', {
@@ -139,10 +127,10 @@ server.route({
 
 server.route({
     method: 'GET',
-    path: '/bandbuilder',
+    path: '/flyerbuilder',
     handler: {
         view: {
-            template: 'bandbuilder'
+            template: 'flyerbuilder'
         }
     }
 });
